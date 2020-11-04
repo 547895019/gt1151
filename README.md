@@ -30,6 +30,10 @@ RT-Thread online packages  --->
   peripheral libraries and drivers  --->
     touch drivers  --->
       gt1151: touch ic gt1151 for rt-thread
+			  gt1151 rts pin number  --->
+              gt1151 irq pin number  --->
+              gt1151 i2c bus name  --->
+              gt1151 touch dev name  --->
               Version (latest)  --->
 ```
 **Version**：软件包版本选择
@@ -54,15 +58,12 @@ int rt_hw_gt1151_port(void)
 {
     struct rt_touch_config config;
     rt_uint8_t rst;
-    
-    rst = GT1151_RST_PIN;
-    config.dev_name = "i2c1";
-    config.irq_pin.pin  = GT1151_IRQ_PIN;
+    rst = PKG_GT1151_RST_PIN;
+    config.dev_name = PKG_GT1151_I2C_BUS_NAME;
+    config.irq_pin.pin  = PKG_GT1151_IRQ_PIN;
     config.irq_pin.mode = PIN_MODE_INPUT_PULLDOWN;
     config.user_data = &rst;
-
-    rt_hw_gt1151_init("gt", &config);
-
+    rt_hw_gt1151_init(PKG_GT1151_TOUCH_DEV_NAME, &config);
     return 0;
 }
 INIT_ENV_EXPORT(rt_hw_gt1151_port);
@@ -76,6 +77,6 @@ INIT_ENV_EXPORT(rt_hw_gt1151_port);
 
 维护人:
 
-- [tyustli](https://github.com/547895019) 
+- [547895019](https://github.com/547895019) 
 
 - 主页：<https://github.com/547895019/gt1151>
