@@ -30,7 +30,7 @@ RT-Thread online packages  --->
   peripheral libraries and drivers  --->
     touch drivers  --->
       gt1151: touch ic gt1151 for rt-thread
-			  gt1151 rts pin number  --->
+              gt1151 rts pin number  --->
               gt1151 irq pin number  --->
               gt1151 i2c bus name  --->
               gt1151 touch dev name  --->
