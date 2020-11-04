@@ -491,6 +491,21 @@ int rt_hw_gt1151_init(const char *name, struct rt_touch_config *cfg)
     return RT_EOK;
 }
 
+
+int rt_hw_gt1151_port(void)
+{
+    struct rt_touch_config config;
+    rt_uint8_t rst;
+    rst = PKG_GT1151_RST_PIN;
+    config.dev_name = PKG_GT1151_I2C_BUS_NAME;
+    config.irq_pin.pin  = PKG_GT1151_IRQ_PIN;
+    config.irq_pin.mode = PIN_MODE_INPUT_PULLDOWN;
+    config.user_data = &rst;
+    rt_hw_gt1151_init(PKG_GT1151_TOUCH_DEV_NAME, &config);
+    return 0;
+}
+INIT_ENV_EXPORT(rt_hw_gt1151_port);
+
 /************************** end of file ********************************/
 
 
