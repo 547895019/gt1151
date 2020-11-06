@@ -281,7 +281,7 @@ static void gt1151_touch_up(void *buf, int8_t id)
         read_data[id].event = RT_TOUCH_EVENT_NONE;
     }
 
-    read_data[id].timestamp = rt_touch_get_ts();
+    //read_data[id].timestamp = rt_touch_get_ts();
     read_data[id].width = pre_w[id];
     read_data[id].x_coordinate = pre_x[id];
     read_data[id].y_coordinate = pre_y[id];
@@ -307,7 +307,7 @@ static void gt1151_touch_down(void *buf, int8_t id, int16_t x, int16_t y, int16_
         s_tp_dowm[id] = 1;
     }
 
-    read_data[id].timestamp = rt_touch_get_ts();
+    //read_data[id].timestamp = rt_touch_get_ts();
     read_data[id].width = w;
     read_data[id].x_coordinate = x;
     read_data[id].y_coordinate = y;

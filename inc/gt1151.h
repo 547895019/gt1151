@@ -14,7 +14,7 @@
 #include "touch.h"
 
 #define GTP_ADDR_LENGTH        (2)
-#define GT1151_MAX_TOUCH       (5)
+#define GT1151_MAX_TOUCH       (10)
 #define GT1151_POINT_INFO_NUM  (8)
 
 #define GT1151_ADDRESS     (0x14)
